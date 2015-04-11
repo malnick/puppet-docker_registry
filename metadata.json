@@ -1,0 +1,17 @@
+{
+  "name": "puppet-docker_registry",
+  "version": "0.1.0",
+  "author": "Jef",
+  "summary": "Installs the docker registry and manages the service",
+  "license": "Apache 2.0",
+  "source": "sourceclear/puppet-docker_registry",
+  "project_page": "malnick@gmail.com",
+  "issues_url": "The git repo",
+  "dependencies": [
+    {
+      "name":"puppetlabs-stdlib","version_requirement":">= 1.0.0",
+      "name":"stankevich/python","version_requirement":">=1.9.1",
+    }
+  ]
+}
+
