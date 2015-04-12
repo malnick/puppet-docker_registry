@@ -11,6 +11,7 @@
     {
       "name":"puppetlabs-stdlib","version_requirement":">= 1.0.0",
       "name":"stankevich/python","version_requirement":">=1.9.1",
+      "name":"garethr/docker","version_requirement":">=3.5.0",
     }
   ]
 }
