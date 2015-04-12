@@ -38,8 +38,6 @@
 class docker_registry (
 
   $manage_python        = true,
-  $package_ensure       = 'present',
-  $manage_pkg_repo      = true,
   $aws_secret_key_id    = undef,
   $aws_secret_acess_key = undef,
   $aws_bucket           = undef,
@@ -48,16 +46,14 @@ class docker_registry (
   
   class { ::docker: }
   ->
-  class { ::docker_registry::repo: manage_repo => $manage_pkg_repo }
-  ->
-  class { ::docker_registry::install: 
-    package_ensure        => $package_ensure,
+  class { ::docker_registry::python: 
     manage_python         => $manage_python,
+ }
+  ->
+  class { ::docker_registry::service:
     aws_secret_key_id     => $aws_secret_key_id,
     aws_secret_access_key => $aws_secret_access_key,
     $aws_bucket           => $aws_bucket,
   }
-  ->
-  class { ::docker_registry::service }
 
 }
