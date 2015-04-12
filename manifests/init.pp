@@ -46,6 +46,8 @@ class docker_registry (
 
 ){
   
+  class { ::docker: }
+  ->
   class { ::docker_registry::repo: manage_repo => $manage_pkg_repo }
   ->
   class { ::docker_registry::install: 

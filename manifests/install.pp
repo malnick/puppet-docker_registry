@@ -7,6 +7,14 @@ class docker_registry_install (
 
 ){
 
+  class { 'python' :
+    version    => 'system',
+    pip        => true,
+    dev        => true,
+    virtualenv => true,
+    gunicorn   => true,
+  }
 
-
+  #exec { 'run_registry':
+  #  command
 }
